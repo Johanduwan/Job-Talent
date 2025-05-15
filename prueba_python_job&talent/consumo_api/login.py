@@ -13,10 +13,10 @@ def crear_base_datos():
             password TEXT
         )
     """)
-    # Agregar un usuario de prueba si no existe
-    cursor.execute("SELECT * FROM usuarios WHERE username=? AND password=?", ("admin", "1234"))
+    #¡¡¡(usuario= "admin") (contraseña = 123456789)!!!! 
+    cursor.execute("SELECT * FROM usuarios WHERE username=? AND password=?", ("admin", "123456789"))
     if not cursor.fetchone():
-        cursor.execute("INSERT INTO usuarios (username, password) VALUES (?, ?)", ("admin", "1234"))
+        cursor.execute("INSERT INTO usuarios (username, password) VALUES (?, ?)", ("admin", "123456789"))
     conn.commit()
     conn.close()
 
